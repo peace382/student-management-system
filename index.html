@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Student Record Management</h1>
+            <p>Register and manage student information</p>
+        </header>
+
+        <section class="registration">
+            <h2>Student Registration</h2>
+
+            <form id="studentForm">
+
+                <div class="form-group">
+                    <label>Student Number</label>
+                    <input type="text" id="studentId"
+                        placeholder="Enter student number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" id="studentName"
+                        placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="studentEmail"
+                        placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Course</label>
+                    <input type="text" id="studentCourse"
+                        placeholder="Enter course" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select id="studentGender" required>
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    Add Student
+                </button>
+
+                <button type="button" id="cancelBtn"
+                    onclick="cancelUpdate()" hidden>
+                    Cancel
+                </button>
+
+            </form>
+        </section>
+
+        <section class="records">
+
+            <h2>Student Records</h2>
+
+            <div class="record-info">
+                <p>Registered Students: <span id="studentCount">0</span></p>
+
+                <input type="text" id="searchInput"
+                    placeholder="Search students...">
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Number</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Gender</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable"></tbody>
+                </table>
+
+            </div>
+
+            <p id="message">No student records available.</p>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
